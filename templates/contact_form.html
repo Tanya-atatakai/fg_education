@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+<html>
+<head>
+    <link rel="stylesheet" href="{% static "css/contact.css" %}">
+</head>
+<body>
+{% block main %}
+  <div class="col-md-7 middle">
+   <form method="post" action=".">{% csrf_token %}
+
+     <div id="w">
+       <h1>Обратная связь</h1>
+       <form id="contactform" name="contact" method="post" action="#">
+         <p class="note"><span class="req"></span> Все поля обязательны для заполнения</p>
+
+         <div class="row">
+           <label>Ваш электронный адрес <span class="req"></span></label>
+           {{ form.email_from }}
+         </div>
+
+         <div class="row">
+           <label>Тема <span class="req"></span></label>
+           {{ form.email_subject }}
+         </div>
+
+         <div class="row">
+           <label> Сообщение <span class="req"></span></label>
+           {{ form.email_message }}
+         </div>
+
+      <div class="FeedbackButton">
+          <button type="submit">Отправить сообщение</button>
+      </div>
+
+    </form>
+  </div>
+{% endblock %}
+</body>
+</html>

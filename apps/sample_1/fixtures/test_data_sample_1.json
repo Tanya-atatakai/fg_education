@@ -1,0 +1,103 @@
+[
+	{
+		"model": "base_api.testapidata",
+		"pk": 1,
+		"fields": 
+		{
+			"input": "{\"title\": \"Title #1\", \"body\": \"Hello, World 1!\"}",
+			"output": "{\"error_detail\": \"Размер входных данных превышает разрешенный на 68 байт. Максимальный разрешенный размер составляет 5 байт.\"}",
+			"override_settings": true
+		}
+	},
+	{
+		"model": "base_api.testapidata",
+		"pk": 2,
+		"fields": 
+		{
+			"input": "{\"title\": \"Title #1\", \"body\": \"Hello, World 1!\"}",
+			"output": "{\"error_detail\": \"Длина входных данных превышает разрешенную на 43 символов. Максимальная разрешенная длина составляет 5 символов.\"}",
+			"override_settings": true
+		}
+	},
+	{
+		"model": "base_api.testapidata",
+		"pk": 3,
+		"fields": 
+		{
+			"input": "",
+			"output": "{\"error_detail\": \"Пустые входные данные\"}"			
+		}
+	},
+	{
+		"model": "base_api.testapidata",
+		"pk": 4,
+		"fields": 
+		{
+			"input": "Привет, я совсем не json",
+			"output": "{\"error_detail\": \"на входе не json\"}"			
+		}
+	},
+	{
+		"model": "base_api.testapidata",
+		"pk": 5,
+		"fields": 
+		{
+			"input": "{\"title\": \"Title #1\", \"body\": \"Hello, World 1!\"}",
+			"output": "<h1>Title #1</h1><p>Hello, World 1!</p>"
+		}
+    },
+	{
+		"model": "base_api.testapidata",
+		"pk": 6,
+		"fields": 
+		{
+			"input": "[{\"title\": \"Title #1\", \"body\": \"Hello, World 1!\" }, { \"title\": \"Title #2\", \"body\": \"Hello, World 2!\"}]",
+			"output": "<h1>Title #1</h1><p>Hello, World 1!</p><h1>Title #2</h1><p>Hello, World 2!</p>"
+		}
+	},
+	{
+		"model": "base_api.testapidata",
+		"pk": 7,
+		"fields": 
+		{
+			"input": "[{\"title\": \"Title #1\", \"bodey\": \"Hello, World 1!\"}]",
+			"output": "{\"error_detail\": \"Атрибут bodey не подходит для конвертации. Имя атрибута может быть только title или body\"}"
+		}
+    },
+	{
+		"model": "base_api.testapidata",
+		"pk": 8,
+		"fields": 
+		{
+			"input": "[[{\"title\": \"Title #1\", \"body\": \"Hello, World 1!\"}]]",
+			"output": "<h1>Title #1</h1><p>Hello, World 1!</p>"
+		}
+    },
+	{
+		"model": "base_api.testapidata",
+		"pk": 9,
+		"fields": 
+		{
+			"input": "[[[[{\"title\": \"Title #1\"}, {\"body\": \"hello\"}]]]]",
+			"output": "<h1>Title #1</h1><p>hello</p>"
+		}
+	},
+	{
+		"model": "base_api.testapidata",
+		"pk": 10,
+		"fields": 
+		{
+			"input": "[[[[{}]]]]",
+			"output": ""
+		}
+	},	
+	{
+		"model": "base_api.testapidata",
+		"pk": 11,
+		"fields": 
+		{
+			"input": "[[[[[[[[[[[[{\"title\": \"Title #1\"}, {\"body\": \"hello\"}]]]]]]]]]]]]",
+			"output": ""
+		}
+	}
+]

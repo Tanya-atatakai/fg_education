@@ -1,0 +1,12 @@
+
+settings_local.py
+
+static/
+__pycache__/
+.idea/
+other/
+
+*.py[cod]
+*.log
+*.sql
+*.sqlite

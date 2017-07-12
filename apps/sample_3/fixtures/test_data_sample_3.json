@@ -1,0 +1,103 @@
+[
+	{
+		"model": "base_api.testapidata",
+		"pk": 1,
+		"fields": 
+		{
+			"input": "{\"title\": \"Title #1\", \"body\": \"Hello, World 1!\"}",
+			"output": "{\"error_detail\": \"Размер входных данных превышает разрешенный на 68 байт. Максимальный разрешенный размер составляет 5 байт.\"}",
+			"override_settings": true
+		}
+	},
+	{
+		"model": "base_api.testapidata",
+		"pk": 2,
+		"fields": 
+		{
+			"input": "{\"title\": \"Title #1\", \"body\": \"Hello, World 1!\"}",
+			"output": "{\"error_detail\": \"Длина входных данных превышает разрешенную на 43 символов. Максимальная разрешенная длина составляет 5 символов.\"}",
+			"override_settings": true
+		}
+	},
+	{
+		"model": "base_api.testapidata",
+		"pk": 3,
+		"fields": 
+		{
+			"input": "",
+			"output": "{\"error_detail\": \"Пустые входные данные\"}"			
+		}
+	},
+	{
+		"model": "base_api.testapidata",
+		"pk": 4,
+		"fields": 
+		{
+			"input": "Привет, я совсем не json",
+			"output": "{\"error_detail\": \"на входе не json\"}"			
+		}
+	},
+	{
+		"model": "base_api.testapidata",
+		"pk": 5,
+		"fields": 
+		{
+			"input": "{\"h1\": \"Title #1\", \"p\": \"Hello, World 1!\"}",
+			"output": "<h1>Title #1</h1><p>Hello, World 1!</p>"
+		}
+    },
+	{
+		"model": "base_api.testapidata",
+		"pk": 6,
+		"fields": 
+		{
+			"input": "[{\"h1\": \"Title #1\", \"p\": \"Hello, World 1!\" }, { \"h2\": \"Title #2\", \"h3\": \"Hello, World 2!\"}]",
+			"output": "<ul><li><h1>Title #1</h1><p>Hello, World 1!</p></li><li><h2>Title #2</h2><h3>Hello, World 2!</h3></li></ul>"
+		}
+	},
+	{
+		"model": "base_api.testapidata",
+		"pk": 7,
+		"fields": 
+		{
+			"input": "[[{\"h3\": \"Title #1\", \"div\": \"Hello, World 1!\"}]]",
+			"output": "<ul><li><ul><li><h3>Title #1</h3><div>Hello, World 1!</div></li></ul></li></ul>"
+		}
+    },
+	{
+		"model": "base_api.testapidata",
+		"pk": 8,
+		"fields": 
+		{
+			"input": "[[[[{\"h3\": \"Title #1\"}, {\"div\": \"hello\"}]]]]",
+			"output": "<ul><li><ul><li><ul><li><ul><li><h3>Title #1</h3></li><li><div>hello</div></li></ul></li></ul></li></ul></li></ul>"
+		}
+	},
+	{
+		"model": "base_api.testapidata",
+		"pk": 9,
+		"fields": 
+		{
+			"input": "[[[[{}]]]]",
+			"output": "<ul><li><ul><li><ul><li><ul><li></li></ul></li></ul></li></ul></li></ul>"
+		}
+	},	
+	{
+		"model": "base_api.testapidata",
+		"pk": 11,
+		"fields": 
+		{
+			"input": "[{\"hh2\": \"Title #1\", \"hewr1\": \"Hello, World 1!\", \"h2\": \"Working\"}]",
+			"output": "<ul><li><h2>Working</h2>\n\n<!--Следующие теги не были распарсены, так как они не являются тегами html: hh2, hewr1 --></li></ul>"
+		}
+	},
+	{
+		"model": "base_api.testapidata",
+		"pk": 12,
+		"fields": 
+		{
+			"input": "[{\"test\": {\"hh2\": \"Title #1\", \"hewr1\": \"Hello, World 1!\", \"h2\": \"Working\"}}, {\"h2\": \"test\", \"div\":\"oooo\"}]",
+			"output": "{\"error_detail\": \"Значением входного атрибута может быть только строка\"}"
+		}
+	}
+]

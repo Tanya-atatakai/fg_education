@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='{{ LANGUAGE_CODE }}'>
+<head>
+    <title>404</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='author' content='Fogstream'>
+    <meta name='description' content=''>
+    <meta name='keywords' content=''>
+
+    <!-- Le styles -->
+    <link href='http://yandex.st/bootstrap/2.3.0/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='http://yandex.st/bootstrap/2.3.0/css/bootstrap-responsive.min.css' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: 'PT Sans', Helvetica, Arial;
+            color: #666666;
+            font-size: 16px;
+            line-height: 22px;
+        }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script>
+    <![endif]-->
+
+    <!-- Le javascript  -->
+    <script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+    <script src='http://yandex.st/bootstrap/2.3.0/js/bootstrap.min.js'></script>
+
+    <!-- Fav and touch icons -->
+    <link href='{{ STATIC_URL }}favicon.png' rel='shortcut icon'>
+</head>
+
+<body>
+<div class='container'>
+    <div class='page-header'>
+        <h1>Ошибка 404 <small>страница не найдена</small></h1>
+    </div>
+    <h3>Вы попали на несуществующую страницу</h3>
+    <p>Адрес запрошенной страницы неверный, либо запрошенная страница больше не существует.</p>
+    <p>Мы предлагаем вам следующие варианты:</p>
+    <ul>
+        <li>ввеcти верный адрес страницы;</li>
+        <li>пройти на <a href='/'>главную</a>.</li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends "blog/blogpost_list.html" %}
+{% block meta_title %}{{ object.title }}{% endblock %}
+
+{% block main %}
+{% block content %}
+    <h2>{{ object.title }}</h2>
+    <p><b>Автор:</b> {{ object.user }}</p>
+    <p>{{ object.content|safe  }}</p>
+ <p><b>Тэги:</b>
+{% for tag in object.tag.all %}
+     {{ tag.title }}
+{% endfor %} </p>
+<ul class="breadcrumb"></ul>
+{% endblock %}
+{% endblock %}
